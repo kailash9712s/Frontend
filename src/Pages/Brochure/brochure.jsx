@@ -1,6 +1,7 @@
 import Navbar from "../../Component/NavBar/navbar"
 import './brochure.css';
 import Footer from '../../Component/Footer/footer'
+import Pdf from '../../assets/pdf/Brochure.pdf';
 
 export default function BrochurePage() {
 
@@ -15,7 +16,7 @@ export default function BrochurePage() {
 
                         <p className="DownloadParagraph">Get detailed information about our products, services, and projects. Download our comprehensive brochure to learn more about Sat Shri Steel.</p>
 
-                        <button className="DownloadButton">Download Brochure</button>
+                        <a href={Pdf} className="DownloadButton">Download Brochure</a>
                     </div>
                 </div>
                 <Footer />

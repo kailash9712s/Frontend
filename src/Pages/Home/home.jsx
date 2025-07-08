@@ -13,8 +13,19 @@ import Logo from '../../assets/image/Logo.jpg';
 import './home.css';
 
 import Worker1 from '../../assets/image/HomePage/Random1.jpg';
+import { useState } from "react";
+import axios from "axios";
 
 export default function HomePage() {
+
+    const [userInfo, setUserInfo] = useState({
+        "name": "",
+        "email": "",
+        "subject": "",
+        "idea": ""
+    });
+
+
 
     const partners = [
         {
@@ -38,6 +49,20 @@ export default function HomePage() {
             logo: Partner4
         }
     ];
+
+    const stateChange = (e) => {
+        const { name, value } = e.target;
+        setUserInfo((prev) => ({
+            ...prev,
+            [name]: value
+        }));
+    }
+
+    const submitData = () => {
+        axios.post('https://testproject-u7vq.onrender.com/api/v1/user/ClientRegister', userInfo).then(response => console.log(response)).catch(error => console.log(error));
+    }
+
+
 
     return (
         <div className="MainDiv">
@@ -137,11 +162,14 @@ export default function HomePage() {
                 <div class="container">
                     <h4 class="subtitle">Contact Us</h4>
                     <h2 class="title">Get In Touch</h2>
-                    <form class="contact-form">
-                        <input className="input1" type="text" placeholder="Your Name" required />
-                        <input className="input1" type="email" placeholder="Your Email" required />
-                        <input className="input1" type="text" placeholder="Subject" required />
-                        <textarea className="input1" placeholder="Your Message" rows="5" required></textarea>
+                    <form class="contact-form" onSubmit={(e) => {
+                        e.preventDefault();
+                        submitData();
+                    }}>
+                        <input name="name" className="input1" type="text" placeholder="Your Name" value={userInfo.name} onChange={stateChange} required />
+                        <input name="email" className="input1" type="email" placeholder="Your Email" value={userInfo.email} onChange={stateChange} required />
+                        <input name="subject" className="input1" type="text" placeholder="Subject" value={userInfo.subject} onChange={stateChange} required />
+                        <textarea name="idea" className="input1" placeholder="Your Message" rows="5" value={userInfo.idea} onChange={stateChange} required></textarea>
                         <button type="submit">Send Message</button>
                     </form>
                 </div>

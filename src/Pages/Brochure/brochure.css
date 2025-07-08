@@ -46,6 +46,8 @@
   border-radius: 8px;
   transform: translateY(0);
   transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
 }
 
 .DownloadButton:hover{
