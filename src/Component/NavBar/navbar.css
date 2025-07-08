@@ -1,0 +1,91 @@
+.NavigationBar {
+    width: 100vw;
+    height: 4em;
+    background: linear-gradient(135deg, #F4A460 0%, #095adb 100%);
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.NavigationBar a {
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.LogoDiv {
+    padding-right: 170px;
+    display: flex;
+    animation: slideDown 0.4s ease-out;
+}
+
+.LogoImage {
+    padding-right: 10px;
+    height: 30px;
+    width: 47px;
+    display: flex;
+}
+
+.Contact {
+    padding-left: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.Contact:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+.div2 {
+    display: flex;
+    padding-left: 170px;
+    animation: slideDown 0.4s ease-out;
+}
+.homenav {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  color: white;
+  text-decoration: none;
+}
+
+.homenav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px; 
+  height: 4px;
+  opacity: 0;
+  background-color: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.homenav:hover::after {
+  width: 100%;
+  height: 2px;
+  border-radius: 0;
+  left: 0;
+  transform: none;
+}
+
+.activeNav::after {
+  opacity: 1;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

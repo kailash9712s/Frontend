@@ -1,0 +1,53 @@
+.head{
+  flex-direction: column;
+}
+.body{
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #F4A460 0%, #095adb 100%);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.card{
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  max-height: 600px;
+  padding: 1.3rem;
+  justify-items: center;
+}
+
+.DownlaodHeading{
+  color: #2c3e50;
+  font-size: 1.3rem;
+  padding: 0px 10px 10px 10px;
+}
+
+.DownloadParagraph{
+  text-align: center;
+  color: #666;
+  line-height: 1.6;
+  font-size: 18px;
+  padding-bottom: 15px;
+}
+
+.DownloadButton{
+  padding: 10px 20px 10px 20px;
+  font-weight: 600;
+  font-size: 17px;
+  background: linear-gradient(135deg, #F4A460 0%, #095adb 100%);
+  border-radius: 8px;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.DownloadButton:hover{
+  transform: translateY(-3px);
+}
