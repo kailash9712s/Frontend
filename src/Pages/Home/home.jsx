@@ -25,6 +25,8 @@ export default function HomePage() {
         "idea": ""
     });
 
+    const [email, setEmail] = useState("");
+
 
 
     const partners = [
@@ -62,8 +64,9 @@ export default function HomePage() {
         axios.post('https://testproject-u7vq.onrender.com/api/v1/user/ClientRegister', userInfo).then(response => console.log(response)).catch(error => console.log(error));
     }
 
-
-
+    const submitEmail = () => {
+        axios.post('https://testproject-u7vq.onrender.com/api/v1/user/EmailSub', { "email": email }).then(response => console.log(response)).catch(error => console.log(error));
+    }
     return (
         <div className="MainDiv">
             <Navbar />
@@ -148,8 +151,14 @@ export default function HomePage() {
                         Steel structure fabrication is the process of transforming raw steel into predefined shapes and components that are used to build frameworks for buildings, bridges, industrial plants, and other infrastructure. It is a meticulous process that combines engineering precision with skilled craftsmanship.
                     </p>
 
-                    <form className="subscribe-form">
+                    <form className="subscribe-form" onSubmit={(e) => {
+                        e.preventDefault();
+                        submitEmail();
+                    }}>
                         <input
+                            name="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             type="email"
                             placeholder="email@example.com"
                             className="email-input"

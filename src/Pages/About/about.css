@@ -209,15 +209,15 @@
 
 .stat-number {
     font-size: 3.5rem;
-    font-weight: 800;
-    color: #4a90e2;
+    font-weight: 500;
+    color: #32cfff;
     margin-bottom: 15px;
     line-height: 1;
     transition: color 0.3s ease;
 }
 
 .stat-card:hover .stat-number {
-    color: #2980b9;
+    color: #32cfff;
 }
 
 .stat-label {
