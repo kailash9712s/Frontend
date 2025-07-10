@@ -54,6 +54,7 @@
 
 .link {
     flex: 1;
+    text-decoration: none;
 }
 
 .paragraph {
@@ -123,7 +124,6 @@
     transform: translateY(-100px);
 }
 
-
 .row1 {
     display: flex;
     flex-direction: column-reverse;
@@ -182,6 +182,7 @@
 }
 
 .footer-link:hover {
+    text-decoration: none;
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -200,24 +201,61 @@
     color: rgba(255, 255, 255, 0.8);
 }
 
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .AboutWebsite {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        padding: 0 1.5rem;
+    }
+    
+    .row {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
     .mainDiv {
-        padding: 3rem 0;
+        padding: 2rem 0;
+        min-height: auto;
     }
 
     .AboutWebsite {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding: 0 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    /* Logo and location section - full width at top */
+    .row {
+        width: 100%;
+        order: 1;
     }
 
     .LogoRepresent {
         justify-content: center;
         text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .logoParagraph {
+        font-size: 18px;
     }
 
     .LogoRepresent1 {
         justify-content: center;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .paragraph {
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .smallText {
         text-align: center;
     }
 
@@ -225,33 +263,153 @@
         justify-content: center;
     }
 
+    /* Create a container for the two columns */
+    .mobile-columns {
+        display: flex;
+        gap: 2rem;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .row1 {
+        order: 2;
+        flex: 1;
+    }
+
+    .row2 {
+        order: 3;
+        flex: 1;
+    }
+
     .list1 {
-        text-align: center;
+        text-align: left;
+    }
+
+    .sectionTitle {
+        font-size: 16px;
+        margin-bottom: 0.8rem;
+    }
+
+    .footer-link {
+        font-size: 13px;
+        padding: 4px 0;
+    }
+
+    .footerDiv {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        font-size: 13px;
     }
 }
 
+/* Mobile columns container */
+.mobile-columns {
+    display: contents;
+}
+
+/* Small mobile styles */
 @media (max-width: 480px) {
     .mainDiv {
-        padding: 2rem 0;
+        padding: 1.5rem 0;
     }
 
     .AboutWebsite {
-        padding: 0 1rem;
-        gap: 2rem;
+        padding: 0 0.8rem;
+        gap: 1.5rem;
     }
 
     .LogoRepresent {
         flex-direction: column;
         gap: 8px;
+        margin-bottom: 0.8rem;
+    }
+
+    .Image {
+        height: 35px;
+        width: 50px;
+    }
+
+    .logoParagraph {
+        margin-left: 0;
+        font-size: 16px;
     }
 
     .LogoRepresent1 {
         flex-direction: column;
         align-items: center;
-        gap: 12px;
+        gap: 8px;
+        margin-bottom: 0.8rem;
     }
 
     .mapIcon {
         margin-right: 0;
+        font-size: 20px;
+    }
+
+    .paragraph {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .socialLinks {
+        gap: 12px;
+    }
+
+    .facebook,
+    .instagram {
+        width: 40px;
+        height: 40px;
+        font-size: 1.6rem;
+    }
+
+    .mobile-columns {
+        gap: 1.5rem;
+    }
+
+    .sectionTitle {
+        font-size: 14px;
+        margin-bottom: 0.6rem;
+    }
+
+    .footer-link {
+        font-size: 12px;
+        padding: 3px 0;
+    }
+
+    .footerDiv {
+        margin-top: 1.5rem;
+        padding-top: 1.2rem;
+        font-size: 12px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+    .mainDiv {
+        padding: 1.5rem 0;
+    }
+
+    .AboutWebsite {
+        padding: 0 0.5rem;
+        gap: 1.5rem;
+    }
+
+    .logoParagraph {
+        font-size: 16px;
+    }
+
+    .paragraph {
+        font-size: 11px;
+    }
+
+    .socialLinks {
+        gap: 10px;
+    }
+
+    .facebook,
+    .instagram {
+        width: 36px;
+        height: 36px;
+        font-size: 1.4rem;
     }
 }

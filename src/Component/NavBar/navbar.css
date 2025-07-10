@@ -5,31 +5,43 @@
     font-size: large;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0 2rem;
 }
 
 .NavigationBar a {
     color: white;
     text-decoration: none;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0.5rem 1rem;
 }
 
 .LogoDiv {
-    padding-right: 170px;
     display: flex;
+    align-items: center;
     animation: slideDown 0.4s ease-out;
 }
 
+.LogoDiv p {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
 .LogoImage {
-    padding-right: 10px;
     height: 30px;
     width: 47px;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.desktop-nav {
     display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .Contact {
-    padding-left: 10px;
+    padding-left: 400px;
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -41,41 +53,44 @@
 
 .div2 {
     display: flex;
-    padding-left: 170px;
+    align-items: center;
     animation: slideDown 0.4s ease-out;
 }
+
 .homenav {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 4px;
-  color: white;
-  text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .homenav::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px; 
-  height: 4px;
-  opacity: 0;
-  background-color: white;
-  border-radius: 50%;
-  transition: all 0.3s ease;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    opacity: 0;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 .homenav:hover::after {
-  width: 100%;
-  height: 2px;
-  border-radius: 0;
-  left: 0;
-  transform: none;
+    width: 100%;
+    height: 2px;
+    border-radius: 0;
+    left: 0;
+    transform: none;
+    opacity: 1;
 }
 
 .activeNav::after {
-  opacity: 1;
+    opacity: 1;
 }
 
 @keyframes slideDown {
@@ -83,9 +98,173 @@
         transform: translateY(-100px);
         opacity: 0;
     }
-
     to {
         transform: translateY(0px);
         opacity: 1;
+    }
+}
+
+/* Mobile Bottom Navigation */
+.mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #F4A460 0%, #095adb 100%);
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    padding: 6px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.bottom-nav-link {
+    text-decoration: none;
+    color: white;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.bottom-nav-link:hover {
+    color: #FFE4B5;
+    transform: translateY(-1px);
+}
+
+.bottom-nav-link.activeNav {
+    color: #FFE4B5;
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4px;
+}
+
+.bottom-nav-icon {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.bottom-nav-text {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .NavigationBar {
+        justify-content: flex-start; /* Changed from center to flex-start */
+        align-items: center;
+        padding: 15px 20px;
+        height: 3.5em;
+    }
+
+    .LogoDiv {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* Changed from center to flex-start */
+        width: auto; /* Changed from 100% to auto */
+        padding: 0;
+    }
+
+    .LogoDiv p {
+        font-size: 1.1rem;
+    }
+
+    .LogoImage {
+        max-height: 35px;
+        width: auto;
+    }
+
+    /* Hide desktop navigation on mobile */
+    .desktop-nav {
+        display: none;
+    }
+
+    /* Show mobile bottom navigation */
+    .mobile-bottom-nav {
+        display: flex;
+    }
+
+    /* Add bottom padding to body to account for fixed bottom nav */
+    body {
+        padding-bottom: 55px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .NavigationBar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .LogoDiv {
+        flex: 1;
+        justify-content: flex-start;
+    }
+
+    .desktop-nav {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 1rem;
+    }
+
+    /* Mobile number/contact section on right side */
+    .mobile-contact {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .mobile-bottom-nav {
+        display: none;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .NavigationBar {
+        padding: 12px 15px;
+        height: 3.2em;
+    }
+
+    .LogoDiv p {
+        font-size: 1rem;
+    }
+
+    .LogoImage {
+        max-height: 30px;
+        margin-right: 8px;
+    }
+
+    .bottom-nav-icon {
+        font-size: 16px;
+    }
+
+    .bottom-nav-text {
+        font-size: 9px;
+    }
+
+    .bottom-nav-item {
+        padding: 3px;
+    }
+
+    .mobile-bottom-nav {
+        padding: 5px 0;
+    }
+
+    body {
+        padding-bottom: 50px;
     }
 }

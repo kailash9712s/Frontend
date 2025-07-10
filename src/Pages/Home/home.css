@@ -2,415 +2,631 @@
     display: flex;
     flex-direction: column;
 }
+
 .column1{
     background-color: #f8f9fa;
     display: flex;
     flex-direction: row;
     padding: 6rem 10rem;
+    align-items: center;
+    gap: 2rem;
 }
+
 .workerImage{
     height: 259px;
     width: 389px;    
     border: 6px solid;
     border-color: #2c3034;
+    border-radius: 10px;
+    object-fit: cover;
 }
+
 .fabrication-container {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 2rem;
-  border-radius: 15px;
-  background-color: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 15px;
+    background-color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .fabrication-title {
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #fb923c;
-  margin-bottom: 2rem;
-  text-align: center;
-  font-style: italic;
-  line-height: 1.2;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #fb923c;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
 }
 
 .fabrication-content {
-  color: #374151;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+    color: #374151;
+    line-height: 1.6;
+    margin-bottom: 2rem;
 }
 
 .fabrication-description {
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-  text-align: justify;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    text-align: justify;
 }
 
 .fabrication-services {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .service-highlight {
-  color: #fb923c;
-  font-weight: 500;
+    color: #fb923c;
+    font-weight: 500;
 }
 
 .service-text {
-  color: #374151;
-  margin-left: 0.5rem;
-  font-weight: 600;
+    color: #374151;
+    margin-left: 0.5rem;
+    font-weight: 600;
 }
 
 .fabrication-buttons {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #ffa825, #ffd904);;
-  color: #ffffff;
-  padding: 0.75rem 2rem;
-  border: none;
-  border-radius: 9999px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  font-size: 1rem;
+    background: linear-gradient(135deg, #ffa825, #ffd904);
+    color: #ffffff;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
 .btn-primary:hover {
-  background-color: #f97316;
+    background: linear-gradient(135deg, #f97316, #fbbf24);
+    transform: translateY(-2px);
 }
 
 .btn-primary:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.3);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.3);
 }
 
 .btn-secondary {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #6b7280;
-  background: none;
-  border: none;
-  font-weight: 500;
-  cursor: pointer;
-  transition: color 0.2s ease;
-  font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6b7280;
+    background: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
 .btn-secondary:hover {
-  color: #1f2937;
+    color: #1f2937;
+    transform: translateX(5px);
 }
 
 .btn-secondary:focus {
-  outline: none;
-  color: #1f2937;
+    outline: none;
+    color: #1f2937;
 }
 
 .arrow-icon {
-  width: 1rem;
-  height: 1rem;
-  transition: transform 0.2s ease;
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.2s ease;
 }
 
 .btn-secondary:hover .arrow-icon {
-  transform: translateX(2px);
+    transform: translateX(2px);
 }
-@media (max-width: 768px) {
-  .fabrication-container {
-    padding: 1.5rem;
-  }
-  
-  .fabrication-title {
-    font-size: 1.25rem;
-  }
-  
-  .fabrication-buttons {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
-  }
-  
-  .btn-secondary {
-    justify-content: center;
-  }
-}
-/* TrustedPartners.css */
+
+/* Trusted Partners Section */
 .trusted-partners {
-  padding: 60px 20px;
-  background-color: #f8f9fa;
-  text-align: center;
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
 }
 
 .partners-title {
-  font-size: 2.5rem;
-  font-weight: 300;
-  color: #d4a574;
-  margin-bottom: 50px;
-  font-family: 'Arial', sans-serif;
-  letter-spacing: 1px;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #d4a574;
+    margin-bottom: 50px;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 1px;
 }
 
 .partners-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .partner-card {
-  background: white;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 200px;
-  min-height: 120px;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    min-height: 120px;
 }
 
 .partner-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .partner-logo {
-  max-width: 100%;
-  max-height: 80px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
+    max-width: 100%;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
 }
 
 .partner-card:hover .partner-logo {
-  filter: grayscale(0%) brightness(1);
+    filter: grayscale(0%) brightness(1);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .partners-title {
-    font-size: 2rem;
-    margin-bottom: 30px;
-  }
-  
-  .partners-grid {
-    gap: 20px;
-  }
-  
-  .partner-card {
-    min-width: 160px;
-    min-height: 100px;
-    padding: 20px;
-  }
-  
-  .partner-logo {
-    max-height: 60px;
-  }
-}
-
-@media (max-width: 480px) {
-  .trusted-partners {
-    padding: 40px 15px;
-  }
-  
-  .partners-title {
-    font-size: 1.8rem;
-  }
-  
-  .partners-grid {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .partner-card {
-    width: 100%;
-    max-width: 250px;
-  }
-}
-
+/* Video Section */
 .section {
-  padding: 40px 0;
-  text-align: center;
-  background-color: white;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: white;
 }
 
 .section-subtitle {
-  font-style: italic;
-  color: #b76e38;
-  margin-bottom: 10px;
+    font-style: italic;
+    color: #b76e38;
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
 .section-title {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 30px;
-  color: #2c3034;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #2c3034;
 }
 
 .video-container {
-  max-width: 900px;
-  margin: 0 auto;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .video-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .work-video {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(203, 202, 202, 0.1);
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(203, 202, 202, 0.2);
 }
 
+/* Subscribe Section */
 .subscribe-section {
-  display: flex;
-  justify-content: center;
-  padding: 60px 20px;
-  background-color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+    background-color: #fff;
 }
 
 .subscribe-container {
-  max-width: 800px;
-  text-align: center;
+    max-width: 800px;
+    text-align: center;
 }
 
 .subscribe-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
 .logo {
-  width: 40px;
-  height: auto;
+    width: 40px;
+    height: auto;
 }
 
 .company-name {
-  font-size: 24px;
-  font-weight: 600;
-  color: #77726b;
+    font-size: 24px;
+    font-weight: 600;
+    color: #77726b;
 }
 
 .subscribe-description {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
 }
 
 .subscribe-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  max-width: 500px;
-  margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .email-input {
-  padding: 12px 20px;
-  border: 2px solid #ccc;
-  border-right: none;
-  background-color: white;
-  color: black;
-  border-radius: 25px 0 0 25px;
-  font-size: 16px;
-  outline: none;
-  width: 60%;
+    padding: 12px 20px;
+    border: 2px solid #ccc;
+    border-right: none;
+    background-color: white;
+    color: black;
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+    outline: none;
+    width: 60%;
 }
 
 .subscribe-button {
-  padding: 12px 25px;
-  background-color: #c5774f;
-  color: white;
-  border: none;
-  border-radius: 0 25px 25px 0;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+    padding: 12px 25px;
+    background-color: #c5774f;
+    color: white;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 .subscribe-button:hover {
-  background-color: #a55a37;
+    background-color: #a55a37;
 }
 
+/* Contact Section */
 .contact-section {
-  padding: 80px 20px;
-  text-align: center;
-  background-color: white;
+    padding: 80px 20px;
+    text-align: center;
+    background-color: white;
 }
 
 .subtitle {
-  font-style: italic;
-  color: #c27135;
-  font-size: 18px;
-  margin-bottom: 0;
+    font-style: italic;
+    color: #c27135;
+    font-size: 18px;
+    margin-bottom: 0;
 }
 
 .title {
-  font-size: 32px;
-  font-weight: 600;
-  color: #2d2d2d;
-  margin-top: 5px;
-  margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #2d2d2d;
+    margin-top: 5px;
+    margin-bottom: 30px;
 }
 
 .contact-form {
-  background: white;
-  padding: 30px;
-  max-width: 700px;
-  margin: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    background: white;
+    padding: 30px;
+    max-width: 700px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  padding: 15px 20px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  border-radius: 5px;
-  font-family: 'Poppins', sans-serif;
-  resize: none;
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    resize: none;
+    box-sizing: border-box;
 }
 
 .contact-form button {
-  width: 100%;
-  background-color: #c27135;
-  color: white;
-  padding: 15px;
-  font-size: 18px;
-  font-weight: 500;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    width: 100%;
+    background-color: #c27135;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
-  background-color: #a55a2a;
+    background-color: #a55a2a;
 }
 
-.input1{
+.input1 {
     background-color: white;
     color: black;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* Main fabrication section */
+    .column1 {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+    }
+
+    .workerImage {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        aspect-ratio: 389/259;
+    }
+
+    .fabrication-container {
+        padding: 1.5rem;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .fabrication-title {
+        font-size: 1.25rem;
+    }
+
+    .fabrication-description {
+        font-size: 0.9rem;
+    }
+
+    .fabrication-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* Partners section */
+    .partners-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .partners-grid {
+        gap: 20px;
+    }
+
+    .partner-card {
+        min-width: 160px;
+        min-height: 100px;
+        padding: 20px;
+    }
+
+    .partner-logo {
+        max-height: 60px;
+    }
+
+    /* Video section */
+    .section {
+        padding: 30px 15px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+    }
+
+    /* Subscribe section */
+    .subscribe-section {
+        padding: 40px 15px;
+    }
+
+    .company-name {
+        font-size: 20px;
+    }
+
+    .subscribe-description {
+        font-size: 14px;
+    }
+
+    .subscribe-form {
+        flex-direction: column;
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .email-input {
+        width: 100%;
+        border-radius: 25px;
+        border: 2px solid #ccc;
+    }
+
+    .subscribe-button {
+        width: 100%;
+        border-radius: 25px;
+    }
+
+    /* Contact section */
+    .contact-section {
+        padding: 50px 15px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .contact-form {
+        padding: 20px;
+        margin: 0 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small devices */
+    .column1 {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .fabrication-container {
+        padding: 1rem;
+    }
+
+    .fabrication-title {
+        font-size: 1.1rem;
+    }
+
+    .fabrication-description {
+        font-size: 0.85rem;
+        text-align: left;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .trusted-partners {
+        padding: 40px 15px;
+    }
+
+    .partners-title {
+        font-size: 1.8rem;
+    }
+
+    .partners-grid {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .partner-card {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .section-subtitle {
+        font-size: 14px;
+    }
+
+    .company-name {
+        font-size: 18px;
+    }
+
+    .subscribe-description {
+        font-size: 13px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .contact-form {
+        padding: 15px;
+        margin: 0 5px;
+    }
+}
+
+/* Landscape phone orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+    .column1 {
+        flex-direction: row;
+        padding: 2rem 1rem;
+    }
+
+    .workerImage {
+        width: 45%;
+        max-width: none;
+    }
+
+    .fabrication-container {
+        width: 55%;
+        padding: 1rem;
+    }
+
+    .fabrication-buttons {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: auto;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .column1 {
+        padding: 4rem 5rem;
+    }
+
+    .workerImage {
+        width: 350px;
+        height: auto;
+    }
+
+    .fabrication-container {
+        max-width: 500px;
+    }
+
+    .partners-title {
+        font-size: 2.2rem;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
 }
