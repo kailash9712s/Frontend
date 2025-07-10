@@ -76,7 +76,7 @@ export default function HomePage() {
     const submitData = () => {
         if (firstRequest) return;
 
-        setFirstRequest = true;
+        setFirstRequest(true);
 
         alert("We soon contact you!");
         axios.post('https://testproject-u7vq.onrender.com/api/v1/user/ClientRegister', userInfo).then(
@@ -89,13 +89,13 @@ export default function HomePage() {
                 alert("Failed ", error);
             });
 
-        setFirstRequest = false;
+        setFirstRequest(false);
     }
 
     const submitEmail = () => {
         if (secondRequest) return;
 
-        setSecondRequest = true;
+        setSecondRequest(true);
 
         axios.post('https://testproject-u7vq.onrender.com/api/v1/user/EmailSub', { "email": email }).then(response => {
             console.log(response);
@@ -106,7 +106,7 @@ export default function HomePage() {
             alert("Failed ", error);
         });
 
-        setSecondRequest = false;
+        setSecondRequest(false);
     }
 
     const goTOAbout = () => {
