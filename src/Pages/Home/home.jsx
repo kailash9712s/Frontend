@@ -15,8 +15,11 @@ import './home.css';
 import Worker1 from '../../assets/image/HomePage/Random1.jpg';
 import { useState } from "react";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function HomePage() {
+
+    const navigate = useNavigate();
 
     const [userInfo, setUserInfo] = useState({
         "name": "",
@@ -60,6 +63,7 @@ export default function HomePage() {
         }));
     }
 
+
     const submitData = () => {
         axios.post('https://testproject-u7vq.onrender.com/api/v1/user/ClientRegister', userInfo).then(response => console.log(response)).catch(error => console.log(error));
     }
@@ -67,6 +71,12 @@ export default function HomePage() {
     const submitEmail = () => {
         axios.post('https://testproject-u7vq.onrender.com/api/v1/user/EmailSub', { "email": email }).then(response => console.log(response)).catch(error => console.log(error));
     }
+
+    const goTOAbout = () => {
+        navigate('/About');
+        window.scrollTo(0,0);
+    }
+
     return (
         <div className="MainDiv">
             <Navbar />
@@ -90,7 +100,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="fabrication-buttons">
-                        <button className="btn-primary">
+                        <button className="btn-primary" onClick={goTOAbout}>
                             About Us
                         </button>
 

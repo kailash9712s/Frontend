@@ -30,7 +30,6 @@ export default function Navbar() {
             data: currentPoint
         });
 
-        // Close sidebar after navigation on mobile
         setIsSidebarOpen(false);
     }
 
@@ -48,7 +47,6 @@ export default function Navbar() {
     }, [state.currentPoint]);
 
     useEffect(() => {
-        // Close sidebar when clicking outside
         const handleClickOutside = (event) => {
             if (isSidebarOpen && !event.target.closest('.sidebar') && !event.target.closest('.hamburger')) {
                 closeSidebar();
@@ -68,7 +66,6 @@ export default function Navbar() {
                 <p>Sat Shri Steel</p>
             </div>
 
-            {/* Desktop Navigation - Centered */}
             <nav className="desktop-nav">
                 <Link
                     className={`homenav ${Location.pathname === "/" ? "activeNav" : ""}`}
