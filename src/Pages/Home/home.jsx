@@ -78,36 +78,42 @@ export default function HomePage() {
 
         setFirstRequest(true);
 
-        alert("We soon contact you!");
-        axios.post('https://testproject-u7vq.onrender.com/api/v1/user/ClientRegister', userInfo).then(
-            response => {
+        alert("We will contact you soon!");
+
+        axios.post('https://testproject-u7vq.onrender.com/api/v1/user/ClientRegister', userInfo)
+            .then(response => {
                 console.log(response);
-                alert("We soon contact you!");
-
-            }).catch(error => {
-                console.log(error);
-                alert("Failed ", error);
+                alert("Submitted successfully!");
+            })
+            .catch(error => {
+                console.error(error);
+                alert("Failed: " + error.message);
+            })
+            .finally(() => {
+                setFirstRequest(false);
             });
+    };
 
-        setFirstRequest(false);
-    }
 
     const submitEmail = () => {
         if (secondRequest) return;
 
         setSecondRequest(true);
 
-        axios.post('https://testproject-u7vq.onrender.com/api/v1/user/EmailSub', { "email": email }).then(response => {
-            console.log(response);
-            alert("Done");
+        axios.post('https://testproject-u7vq.onrender.com/api/v1/user/EmailSub', { email })
+            .then(response => {
+                console.log(response);
+                alert("Subscribed successfully!");
+            })
+            .catch(error => {
+                console.error(error);
+                alert("Failed: " + error.message);
+            })
+            .finally(() => {
+                setSecondRequest(false);
+            });
+    };
 
-        }).catch(error => {
-            console.log(error);
-            alert("Failed ", error);
-        });
-
-        setSecondRequest(false);
-    }
 
     const goTOAbout = () => {
         navigate('/About');
