@@ -19,6 +19,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function HomePage() {
 
+
     const navigate = useNavigate();
 
     const [userInfo, setUserInfo] = useState({
@@ -65,16 +66,32 @@ export default function HomePage() {
 
 
     const submitData = () => {
-        axios.post('https://testproject-u7vq.onrender.com/api/v1/user/ClientRegister', userInfo).then(response => console.log(response)).catch(error => console.log(error));
+        alert("We soon contact you!");
+        axios.post('https://testproject-u7vq.onrender.com/api/v1/user/ClientRegister', userInfo).then(
+            response => {
+                console.log(response);
+                alert("We soon contact you!");
+
+            }).catch(error => {
+                console.log(error);
+                alert("Failed ", error);
+            });
     }
 
     const submitEmail = () => {
-        axios.post('https://testproject-u7vq.onrender.com/api/v1/user/EmailSub', { "email": email }).then(response => console.log(response)).catch(error => console.log(error));
+        axios.post('https://testproject-u7vq.onrender.com/api/v1/user/EmailSub', { "email": email }).then(response => {
+                console.log(response);
+                alert("Done");
+
+            }).catch(error => {
+                console.log(error);
+                alert("Failed ", error);
+            });
     }
 
     const goTOAbout = () => {
         navigate('/About');
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     }
 
     return (
