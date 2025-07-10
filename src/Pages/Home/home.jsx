@@ -19,6 +19,10 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function HomePage() {
 
+    const [firstRequest, setFirstRequest] = useState(false);
+    const [secondRequest, setSecondRequest] = useState(false);
+
+
 
     const navigate = useNavigate();
 
@@ -37,22 +41,26 @@ export default function HomePage() {
         {
             id: 1,
             name: 'Jindal Steel & Power',
-            logo: Partner1
+            logo: Partner1,
+            url: "https://www.jindalsteel.com/"
         },
         {
             id: 2,
             name: 'Aditya Birla',
-            logo: Partner2
+            logo: Partner2,
+            url: "https://www.adityabirla.com/"
         },
         {
             id: 3,
             name: 'Hindalco',
-            logo: Partner3
+            logo: Partner3,
+            url: "https://www.hindalco.com/"
         },
         {
             id: 4,
             name: 'JSW',
-            logo: Partner4
+            logo: Partner4,
+            url: "https://www.jsw.in/"
         }
     ];
 
@@ -66,6 +74,10 @@ export default function HomePage() {
 
 
     const submitData = () => {
+        if (firstRequest) return;
+
+        setFirstRequest = true;
+
         alert("We soon contact you!");
         axios.post('https://testproject-u7vq.onrender.com/api/v1/user/ClientRegister', userInfo).then(
             response => {
@@ -76,17 +88,25 @@ export default function HomePage() {
                 console.log(error);
                 alert("Failed ", error);
             });
+
+        setFirstRequest = false;
     }
 
     const submitEmail = () => {
-        axios.post('https://testproject-u7vq.onrender.com/api/v1/user/EmailSub', { "email": email }).then(response => {
-                console.log(response);
-                alert("Done");
+        if (secondRequest) return;
 
-            }).catch(error => {
-                console.log(error);
-                alert("Failed ", error);
-            });
+        setSecondRequest = true;
+
+        axios.post('https://testproject-u7vq.onrender.com/api/v1/user/EmailSub', { "email": email }).then(response => {
+            console.log(response);
+            alert("Done");
+
+        }).catch(error => {
+            console.log(error);
+            alert("Failed ", error);
+        });
+
+        setSecondRequest = false;
     }
 
     const goTOAbout = () => {
@@ -145,11 +165,13 @@ export default function HomePage() {
                 <div className="partners-grid">
                     {partners.map((partner) => (
                         <div key={partner.id} className="partner-card">
-                            <img
-                                src={partner.logo}
-                                alt={partner.name}
-                                className="partner-logo"
-                            />
+                            <a href={partner.url}>
+                                <img
+                                    src={partner.logo}
+                                    alt={partner.name}
+                                    className="partner-logo"
+                                />
+                            </a>
                         </div>
                     ))}
                 </div>
@@ -194,11 +216,11 @@ export default function HomePage() {
                     </form>
                 </div>
             </section>
-            <section id="contact" class="contact-section">
-                <div class="container">
-                    <h4 class="subtitle">Contact Us</h4>
-                    <h2 class="title">Get In Touch</h2>
-                    <form class="contact-form" onSubmit={(e) => {
+            <section id="contact" className="contact-section">
+                <div className="container">
+                    <h4 className="subtitle">Contact Us</h4>
+                    <h2 className="title">Get In Touch</h2>
+                    <form className="contact-form" onSubmit={(e) => {
                         e.preventDefault();
                         submitData();
                     }}>
