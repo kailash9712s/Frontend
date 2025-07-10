@@ -19,9 +19,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function HomePage() {
 
-    const [firstRequest, setFirstRequest] = useState(false);
-    const [secondRequest, setSecondRequest] = useState(false);
-
 
 
     const navigate = useNavigate();
@@ -74,11 +71,6 @@ export default function HomePage() {
 
 
     const submitData = () => {
-        if (firstRequest) return;
-
-        setFirstRequest(true);
-
-        alert("We will contact you soon!");
 
         axios.post('https://testproject-u7vq.onrender.com/api/v1/user/ClientRegister', userInfo)
             .then(response => {
@@ -89,16 +81,10 @@ export default function HomePage() {
                 console.error(error);
                 alert("Failed: " + error.message);
             })
-            .finally(() => {
-                setFirstRequest(false);
-            });
     };
 
 
     const submitEmail = () => {
-        if (secondRequest) return;
-
-        setSecondRequest(true);
 
         axios.post('https://testproject-u7vq.onrender.com/api/v1/user/EmailSub', { email })
             .then(response => {
@@ -109,9 +95,6 @@ export default function HomePage() {
                 console.error(error);
                 alert("Failed: " + error.message);
             })
-            .finally(() => {
-                setSecondRequest(false);
-            });
     };
 
 
