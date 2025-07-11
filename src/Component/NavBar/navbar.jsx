@@ -99,7 +99,7 @@ export default function Navbar() {
 
             {/* Mobile Contact Section - Right Side (Desktop Only) */}
             <div className="mobile-contact">
-                <a href="tel:+1234567890" className="Contact">
+                <a href="tel:+919909042114" className="Contact">
                     📞 +91 9909042114
                 </a>
             </div>
